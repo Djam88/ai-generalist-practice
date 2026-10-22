@@ -1,4 +1,4 @@
-Status: behind - Week 1 Tue + Wed
+Status: behind - Week 1 Tue (Workbench exercise + Glossary) + Wed
 # Learning log
 ## 2026-10-14
 - Created repo ai-generalist-practice, cloned it into Documents/Coding
