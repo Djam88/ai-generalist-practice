@@ -1,15 +1,51 @@
-   # Learning log
-
-   ## 2026-10-14
-   - Created repo ai-generalist-practice, cloned it into Documents/Coding
-   - Learned: pwd, ls, ls -a, cd, mkdir, touch, Tab completion
-   - Git tracks files, not folders, so empty folders need a .gitkeep
-   - Installed the `code` command so the shell can find VS Code
-   - Installed Node.js LTS: node v24.22.0, npm 11.19.1, at /usr/local/bin/node
+Status: behind - Week 1 Tue + Wed
+# Learning log
+## 2026-10-14
+- Created repo ai-generalist-practice, cloned it into Documents/Coding
+- Learned: pwd, ls, ls -a, cd, mkdir, touch, Tab completion
+- Git tracks files, not folders, so empty folders need a .gitkeep
+- Installed the `code` command so the shell can find VS Code
+- Installed Node.js LTS: node v24.22.0, npm 11.19.1, at /usr/local/bin/node
 ## 2026-10-15 (Thu): API keys + environment variables
 - Environment variables live in one shell process. A new tab doesn't inherit them, and an unset variable is silently empty.
 - Relative vs absolute paths: `cd notes` starts from the cwd, `cd /notes` starts from the disk root
 - What the API key does: …
 - It must never go in: … because …
 - If it leaks: …
-   
+## 2026-10-16 (Week 0, Fri): Connectors
+
+**What a connector really is**
+- An MCP server that exposes tools (named actions with typed inputs) for one app.
+- The model outputs a structured JSON tool call. The MCP client inside the Claude app
+  sends it to the server and returns the result to the model.
+- The model never logs into the app itself.
+
+**Three layers of control**
+1. Capability: Claude can only use tools the server offers. No delete tool means no deleting.
+2. Permission: for each tool, I choose blocked, needs approval or always allow.
+3. OAuth scopes: what I granted at sign-in (read-only or read and write) limits even the tools that exist.
+
+**Connector: Google Calendar**
+- Read tools: list_calendars, list_events, search_events, get_event, suggest_time
+- Write tools: create_event, update_event, delete_event, respond_to_event
+- Permissions set: all write tools on "needs approval"
+- Tested: [what I asked and what came back]
+
+**API key recall (yesterday)**
+- Front-end JavaScript is downloaded to every visitor's browser, so a key in it is published.
+  Anyone can see it in DevTools (Sources or Network tab). No hacking needed.
+- Fix: the key lives on a server as an environment variable. The browser calls my server,
+  and the server calls the API.
+- A key that has been exposed gets revoked and replaced.
+
+**Mac DevTools:** Cmd + Option + I in Chrome, or right-click and choose Inspect.
+## 2026-10-17 (Sat): Ten repetitive tasks
+1. Receive client's quote emails, check for rates from multiple suppliers, add the profit percentage, and then send the rates to the client on an email.
+2. Receive the booking, create a job file on ASM to assign a unique reference that follows this particular job to the end. Create an import/export from the job, invoice the job
+## 2026-10-19 (Mon):
+Traditional AI maps an input to one label from a fixed set. Generative AI produces new content. An LLM does this by predicting a probability distribution over the next token, sampling one, appending it, and repeating.
+## 2026-10-21 (Wed): Week 1 Mon catch-up, tokens
+- Prediction table: notes/tokens.md
+- Learned: BPE merges the most frequent pairs, so common English and code are cheap; rarer languages and scripts cost more tokens.
+- Pattern: I overestimated every time, because the vocabulary is large and common text merges into bigger chunks.
+- Confused: why `.length` was one token until I linked it to JavaScript frequency.
