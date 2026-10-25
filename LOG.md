@@ -61,4 +61,8 @@ Traditional AI maps an input to one label from a fixed set. Generative AI produc
 - Claude API 2026-10-21 rejects temperature; AI Studio doesn’t expose it for Gemini 3.8 Flash -> used Gemma 4
 - Gemma T=0, 3 new chats: identical ("Your entire library, one page at a time.")
 - Same-chat runs differed: context grows each turn, so the input changes
-- Gemma T=1, 4 new chats: also identical. Prediction (3 different) was wrong. Why: TBD
+- Gemma T=1, Top P 0.95, 4 new chats: identical (predicted 3 different, wrong). Why: Gemma is very confident at most forks, so Top P 0.95 keeps only the top token; at ~99% per token, 0.99^10 ≈ 90% of runs follow the same route.
+- Gemma T=2, Top P 0.95: still identical. T=2, Top P max: 3 different ("Track every chapter, cherish every page." / "Your entire library, organized in your pocket." / "Dine on stories, track your journey—one page at a time."). Top P was the gatekeeper; high T brings odd words.
+- Gemma T=1, Top P max: 3 different from 4 runs, all ending "one page at a time".
+- Gemma T=0.5, Top P max, 7 runs: "Track your journey, one page at a time." 4/7, plus 3 others. Lower T squares the probabilities: the favourite grows, close alternatives survive, distant ones vanish.
+- Lesson: Top P decides WHETHER alternatives exist; temperature decides HOW OFTEN they're picked.
