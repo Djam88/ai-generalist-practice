@@ -1,5 +1,4 @@
-Status: behind - Week 1 Tue (Workbench exercise + Glossary) + Wed
-# Learning log
+Status: behind - Week 1 Tue (T=1 explanation + glossary) + Wed + Thu# Learning log
 ## 2026-10-14
 - Created repo ai-generalist-practice, cloned it into Documents/Coding
 - Learned: pwd, ls, ls -a, cd, mkdir, touch, Tab completion
@@ -58,7 +57,7 @@ Traditional AI maps an input to one label from a fixed set. Generative AI produc
 - At T=0 the output only repeats if the input is identical. In the same chat the context grows each turn, so the input is never identical.
 ## 2026-10-25 (Sun): Week 1 Tue exercise
 - Claude Haiku 5.5, default temp: 3 different taglines (2 shared "Never lose track of")
-- Claude API 2026-10-21 and Gemini 3.8 Flash don't expose temperature -> used Gemma 4 in AI Studio
+- Claude API 2026-10-21 rejects temperature; AI Studio doesn’t expose it for Gemini 3.8 Flash -> used Gemma 4
 - Gemma T=0, 3 new chats: identical ("Your entire library, one page at a time.")
 - Same-chat runs differed: context grows each turn, so the input changes
 - Gemma T=1, 4 new chats: also identical. Prediction (3 different) was wrong. Why: TBD
