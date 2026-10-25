@@ -1,4 +1,5 @@
-Status: behind - Week 1 Tue (T=1 explanation + glossary) + Wed + Thu# Learning log
+Status: behind - Week 1 Tue (T=1 explanation + glossary) + Wed + Thu
+# Learning log
 ## 2026-10-14
 - Created repo ai-generalist-practice, cloned it into Documents/Coding
 - Learned: pwd, ls, ls -a, cd, mkdir, touch, Tab completion
