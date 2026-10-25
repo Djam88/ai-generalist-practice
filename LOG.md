@@ -53,3 +53,5 @@ Traditional AI maps an input to one label from a fixed set. Generative AI produc
 - Softmax by hand, scores mat 5 / rug 3 / cat 2: T=1 gives 84.38 / 11.42 / 4.20%; T=0.5 gives 97.96 / 1.79 / 0.24%.
 - Lowering T stretches the score gaps before softmax, so the distribution gets sharper (greedy as T → 0).
 - Confused: which step makes scores positive (it's e^, not dividing by T).
+   ## 2026-10-25 (Sun): Week 1 Tue catch-up, continued
+   - Wrote notes/temperature.md (logits → ÷T → softmax → sample; greedy decoding)
