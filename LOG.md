@@ -53,5 +53,12 @@ Traditional AI maps an input to one label from a fixed set. Generative AI produc
 - Softmax by hand, scores mat 5 / rug 3 / cat 2: T=1 gives 84.38 / 11.42 / 4.20%; T=0.5 gives 97.96 / 1.79 / 0.24%.
 - Lowering T stretches the score gaps before softmax, so the distribution gets sharper (greedy as T → 0).
 - Confused: which step makes scores positive (it's e^, not dividing by T).
-   ## 2026-10-25 (Sun): Week 1 Tue catch-up, continued
-   - Wrote notes/temperature.md (logits → ÷T → softmax → sample; greedy decoding)
+## 2026-10-25 (Sun): Week 1 Tue catch-up, continued
+- Wrote notes/temperature.md (logits → ÷T → softmax → sample; greedy decoding)
+- At T=0 the output only repeats if the input is identical. In the same chat the context grows each turn, so the input is never identical.
+## 2026-10-25 (Sun): Week 1 Tue exercise
+- Claude Haiku 5.5, default temp: 3 different taglines (2 shared "Never lose track of")
+- Claude API 2026-10-21 and Gemini 3.8 Flash don't expose temperature -> used Gemma 4 in AI Studio
+- Gemma T=0, 3 new chats: identical ("Your entire library, one page at a time.")
+- Same-chat runs differed: context grows each turn, so the input changes
+- Gemma T=1, 4 new chats: also identical. Prediction (3 different) was wrong. Why: TBD
